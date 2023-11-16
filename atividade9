@@ -1,0 +1,41 @@
+mvn archetype:generate -DgroupId=com.example -DartifactId=hello-world -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+cd hello-world
+package com.example;
+
+public class Pessoa {
+    public String dizerOla() {
+        return "Olá, mundo!";
+    }
+}
+package com.example;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class PessoaTest {
+    @Test
+    public void testDizerOla() {
+        Pessoa pessoa = new Pessoa();
+        assertEquals("Olá, mundo!", pessoa.dizerOla());   
+    }
+}
+
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+</dependency>
+<dependencies>
+    <!-- outras dependências -->
+
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
+
+mvn test
+
